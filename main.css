@@ -6,7 +6,7 @@ font-family: old english text mt;
 h1, h2, #arasen {
         color: blue;
 }
-#refresh {
+#refresh, #replay {
     font-size: 1rem;
     font-family: old english text mt;
     font-style: italic;
@@ -14,15 +14,10 @@ h1, h2, #arasen {
     background-color: gold;
 }
 #replay {
-    font-size: 1.25rem;
-    font-family: old english text mt;
-    font-style: italic;
-    text-decoration: wavy;
     padding: 15px;
     margin: 50px;
-    background-color: gold;
 }
-#replay, #refresh:hover {
+#replay:hover, #refresh:hover {
     color: blue;
     font-style: italic;
     font-weight: 200%;

@@ -134,7 +134,8 @@ const updateDOM = (kingsInquiry) => {
     }
 }
 
-let buttonCount = document.getElementById("replay").replay.onclick = function () {
+let buttonCount = document.getElementById("replay")
+replay.onclick = function () {
     count;
     count += 1;
     replay.innerHTML = "Attempt: " + count;

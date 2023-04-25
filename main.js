@@ -134,10 +134,9 @@ const updateDOM = (kingsInquiry) => {
     }
 }
 
-let buttonCount = document.getElementById("replay"),
-  count;
-replay.onclick = function() {
-  count += 1;
+let buttonCount = document.getElementById("replay").replay.onclick = function () {
+    count;
+    count += 1;
     replay.innerHTML = "Attempt: " + count;
     return count;
 };
@@ -172,14 +171,14 @@ document.querySelector('#replay').addEventListener('click', () => {
     // calculate success rate
     
     const rateSuccess = (rateCount / count) * 100;
-    const ratePercent = rateSuccess + "%";
+    const ratePercent = math.round(rateSuccess) + "%";
     
 
     // Give success rate Array with For Loop.
     let i = 0;
     let sumSuccesses = 0;
     let appendDivElRate = "; Success Rates Array: ";
-    let appendSuccessArray = "; This is the Your average via for Loop: ";
+    let appendSuccessArray = "; The scribe has thou averaged plainy: ";
         for (i = 0; i < rateSuccessArray.length; i++) {
         sumSuccesses = sumSuccesses + rateSuccessArray[i];
     };

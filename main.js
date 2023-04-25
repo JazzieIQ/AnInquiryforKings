@@ -3,8 +3,8 @@
 // Key phrasing
 
 const kinglyAnswer = '"African or European?"';
-var count = 0;
-var rateCount = 0;
+let count = 0;
+let rateCount = 0;
 const rateSuccessArray = [];
 const win = 1;
 const lose = 0;
@@ -13,30 +13,28 @@ const lose = 0;
 
 const updateDOM = (kingsInquiry) => {
     if (kingsInquiry == "African or European?") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
-        //console.log(rateCount);
         return;
     }
     else if (kingsInquiry == "I am King I'm supposed to know these things.") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
-        //console.log(rateCount);
         return;
     }
     else if (kingsInquiry == "a kingly answer") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -45,8 +43,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "five") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -55,8 +53,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "Holy Hand Grenade of Antioch") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -65,8 +63,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "I am Authur, King of the Britains.") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -75,8 +73,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "I am your King.") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -85,8 +83,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "You don't vote for kings.") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -95,8 +93,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "Be quiet!") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -105,8 +103,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "Now, stand aside worthy adversary!") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -115,8 +113,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }
     else if (kingsInquiry == "On second thought, let's not go to Camelot. 'Tis a silly place.") {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
         divEl.appendChild(p);
         rateCount;
@@ -125,8 +123,8 @@ const updateDOM = (kingsInquiry) => {
         return;
     }    
     else {
-        var divEl = document.querySelector('#output')
-        var p = document.createElement('p')
+        let divEl = document.querySelector('#output')
+        let p = document.createElement('p')
         p.textContent = "The hour is past and thou art DOOMED!!!!!"
         divEl.appendChild(p);
         alert("THOU HAST FAILED THE KING!");
@@ -136,7 +134,7 @@ const updateDOM = (kingsInquiry) => {
     }
 }
 
-var buttonCount = document.getElementById("replay"),
+let buttonCount = document.getElementById("replay"),
   count;
 replay.onclick = function() {
   count += 1;
@@ -146,8 +144,8 @@ replay.onclick = function() {
 
 //update the DOM
 const updateDOMArray = (kingsInquiry) => {
-        var divEl = document.querySelector('#array')
-        var a = document.createElement('a')
+        let divEl = document.querySelector('#array')
+        let a = document.createElement('a')
     a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
     divEl.appendChild(a);
         return;
@@ -157,8 +155,8 @@ const updateDOMArray = (kingsInquiry) => {
 
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
-    var kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
-    var scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
+    let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
+    let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     kinglyAnswer;
     updateDOM(kingsInquiry);

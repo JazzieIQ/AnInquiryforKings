@@ -203,7 +203,6 @@ document.querySelector('#replay').addEventListener('click', () => {
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
-    //input.style.display = 'none';
 });
 
 //refresh Output div. All code is reset including the array.

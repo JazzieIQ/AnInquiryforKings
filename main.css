@@ -1,9 +1,15 @@
 html {
-font-size: 1.5em;
+font-size: 24px;
 background-color: grey;
 font-family: old english text mt;
 }
-h1, h2, #arasen {
+form {
+    font-size: 1.25rem;
+}
+#inputTxt{
+    content-right: 300px;
+}
+h1, h2, #arasen, form {
         color: blue;
 }
 #refresh, #replay {
@@ -15,7 +21,11 @@ h1, h2, #arasen {
 }
 #replay {
     padding: 15px;
+    padding-left: 20px;
+    padding-right: 30px;
+    align-content: center;
     margin: 50px;
+    margin-left: 75px;
 }
 #replay:hover, #refresh:hover {
     color: blue;
@@ -29,7 +39,7 @@ h1, h2, #arasen {
 article {
     position: relative;
     color: gray;
-    font: size .35rem !important;
+    font-size: .70rem !important;
     text-align: left;
     background-color: black;
 }

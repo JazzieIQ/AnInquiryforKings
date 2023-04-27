@@ -8,7 +8,10 @@ let rateCount = 0;
 const rateSuccessArray = [];
 const win = 1;
 const lose = 0;
-    
+const winTxt = "Tally!";
+const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
+ 
+
 //updateDOM
 
 const updateDOM = (kingsInquiry) => {
@@ -20,6 +23,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "I am King I'm supposed to know these things.") {
@@ -30,6 +34,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "a kingly answer") {
@@ -40,6 +45,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "five") {
@@ -50,9 +56,10 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "Holy Hand Grenade of Antioch") {
+    else if (kingsInquiry == "Holy Hand Grenade of Antioch.") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -60,6 +67,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "I am Authur, King of the Britains.") {
@@ -70,6 +78,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "I am your King.") {
@@ -80,6 +89,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "You don't vote for kings.") {
@@ -90,6 +100,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "Be quiet!") {
@@ -100,6 +111,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "Now, stand aside worthy adversary!") {
@@ -110,6 +122,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }
     else if (kingsInquiry == "On second thought, let's not go to Camelot. 'Tis a silly place.") {
@@ -120,6 +133,7 @@ const updateDOM = (kingsInquiry) => {
         rateCount;
         rateCount += 1;
         rateSuccessArray.push(win);
+        console.log(winTxt);
         return;
     }    
     else {
@@ -127,9 +141,10 @@ const updateDOM = (kingsInquiry) => {
         let p = document.createElement('p')
         p.textContent = "The hour is past and thou art DOOMED!!!!!"
         divEl.appendChild(p);
-        alert("THOU HAST FAILED THE KING!");
+        alert("Thou has been cast into the Gorge of Eternal Peril!");
         rateCount;
         rateSuccessArray.push(lose);
+        console.log(loseTxt);
         return;
     }
 }
@@ -143,11 +158,12 @@ replay.onclick = function () {
 };
 
 //update the DOM
+
 const updateDOMArray = (kingsInquiry) => {
         let divEl = document.querySelector('#array')
         let a = document.createElement('a')
-    a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
-    divEl.appendChild(a);
+        a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
+        divEl.appendChild(a);
         return;
         }
 
@@ -155,7 +171,10 @@ const updateDOMArray = (kingsInquiry) => {
 
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
-    let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
+    let swerian = document.getElementById("inputTxt").value;
+    console.log(swerian);
+    let kingsInquiry = swerian;
+    //let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     kinglyAnswer;
@@ -172,21 +191,21 @@ document.querySelector('#replay').addEventListener('click', () => {
     // calculate success rate
     
     const rateSuccess = (rateCount / count) * 100;
-    const ratePercent = math.round(rateSuccess) + "%";
+    const ratePercent = Math.round(rateSuccess) + "%";
     
 
     // Give success rate Array with For Loop.
-    let i = 0;
+
     let sumSuccesses = 0;
     let appendDivElRate = "; Success Rates Array: ";
     let appendSuccessArray = "; The scribe has thou averaged plainy: ";
-        for (i = 0; i < rateSuccessArray.length; i++) {
+    for (let i = 0; i < rateSuccessArray.length; i++) {
         sumSuccesses = sumSuccesses + rateSuccessArray[i];
     };
-    console.log(sumSuccesses)
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
+    //input.style.display = 'none';
 });
 
 //refresh Output div. All code is reset including the array.

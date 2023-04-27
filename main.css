@@ -6,9 +6,6 @@ font-family: old english text mt;
 form {
     font-size: 1.25rem;
 }
-#inputTxt{
-    content-right: 300px;
-}
 h1, h2, #arasen, form {
         color: blue;
 }

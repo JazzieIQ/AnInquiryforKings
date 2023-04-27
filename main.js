@@ -177,7 +177,6 @@ document.querySelector('#replay').addEventListener('click', () => {
     //let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
-    kinglyAnswer;
     updateDOM(kingsInquiry);
 
     //div "output" split into array. Array increase with attempt.

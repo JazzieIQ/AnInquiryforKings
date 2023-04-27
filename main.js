@@ -15,7 +15,7 @@ const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge o
 //updateDOM
 
 const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "African or European?") {
+    if (kingsInquiry == "african or european") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -26,7 +26,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "I am King I'm supposed to know these things.") {
+    else if (kingsInquiry == "i am king i'm supposed to know these things") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -59,7 +59,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "Holy Hand Grenade of Antioch.") {
+    else if (kingsInquiry == "holy hand grenade of antioch") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -70,7 +70,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "I am Authur, King of the Britains.") {
+    else if (kingsInquiry == "I am authur, king of the britains") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -81,7 +81,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "I am your King.") {
+    else if (kingsInquiry == "i am your king") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -92,7 +92,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "You don't vote for kings.") {
+    else if (kingsInquiry == "you don't vote for kings") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -103,7 +103,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "Be quiet!") {
+    else if (kingsInquiry == "be quiet!") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -114,7 +114,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "Now, stand aside worthy adversary!") {
+    else if (kingsInquiry == "now, stand aside worthy adversary!") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -125,7 +125,7 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "On second thought, let's not go to Camelot. 'Tis a silly place.") {
+    else if (kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -173,8 +173,7 @@ document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
     let swerian = document.getElementById("inputTxt").value;
     console.log(swerian);
-    let kingsInquiry = swerian;
-    //let kingsInquiry = window.prompt("Consider wisley as thou speaks for the King...", "I am King I'm supposed to know these things.");
+    let kingsInquiry = toLowerCase(swerian);
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     updateDOM(kingsInquiry);

@@ -11,7 +11,6 @@ const lose = 0;
 const winTxt = "Tally!";
 const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
  
-
 //updateDOM
 
 const updateDOM = (kingsInquiry) => {
@@ -172,8 +171,7 @@ const updateDOMArray = (kingsInquiry) => {
 document.querySelector('#replay').addEventListener('click', () => {
     buttonCount;
     let swerian = document.getElementById("inputTxt").value;
-    console.log(swerian);
-    let kingsInquiry = toLowerCase(swerian);
+    let kingsInquiry = swerian.toLowerCase();
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     updateDOM(kingsInquiry);
@@ -191,15 +189,16 @@ document.querySelector('#replay').addEventListener('click', () => {
     const rateSuccess = (rateCount / count) * 100;
     const ratePercent = Math.round(rateSuccess) + "%";
     
-
     // Give success rate Array with For Loop.
 
+    let i = 0
     let sumSuccesses = 0;
     let appendDivElRate = "; Success Rates Array: ";
     let appendSuccessArray = "; The scribe has thou averaged plainy: ";
-    for (let i = 0; i < rateSuccessArray.length; i++) {
+    while (i < rateSuccessArray.length) {
         sumSuccesses = sumSuccesses + rateSuccessArray[i];
-    };
+        i++
+    }
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;

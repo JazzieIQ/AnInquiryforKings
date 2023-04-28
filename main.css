@@ -12,12 +12,12 @@ h1,
 h2,
 #arasen,
 form {
-    color: blue;
+    color: darkblue;
 }
 
 #inputTxt {
     margin: 25px;
-    display: inline-block;
+    display: block;
 }
 
 #refresh,
@@ -27,6 +27,7 @@ form {
     font-style: italic;
     text-decoration: wavy;
     background-color: gold;
+    margin: 25px;
 }
 
 #replay {

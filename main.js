@@ -10,11 +10,12 @@ const win = 1;
 const lose = 0;
 const winTxt = "Tally!";
 const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
+const userTxt = document.getElementById("inputTxt");
  
 //updateDOM
 
 const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "african or european") {
+    if (kingsInquiry == "african or european" || kingsInquiry ==  "i am king i'm supposed to know these things" || kingsInquiry == "a kingly answer" || kingsInquiry ==  "five" || kingsInquiry ==  "holy hand grenade of antioch" || kingsInquiry == "ni" || kingsInquiry == "I am authur, king of the britains" ||kingsInquiry == "i am your king" || kingsInquiry == "you don't vote for kings" || kingsInquiry == "be quiet!" || kingsInquiry == "now, stand aside worthy adversary!" || kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
         p.textContent = "The King's answer be: " + kinglyAnswer
@@ -25,116 +26,6 @@ const updateDOM = (kingsInquiry) => {
         console.log(winTxt);
         return;
     }
-    else if (kingsInquiry == "i am king i'm supposed to know these things") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "a kingly answer") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "five") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "holy hand grenade of antioch") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "I am authur, king of the britains") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "i am your king") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "you don't vote for kings") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "be quiet!") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "now, stand aside worthy adversary!") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else if (kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }    
     else {
         let divEl = document.querySelector('#output')
         let p = document.createElement('p')
@@ -202,10 +93,12 @@ document.querySelector('#replay').addEventListener('click', () => {
     let rateCounting = sumSuccesses / count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
     success;
+    ;
 });
 
 //refresh Output div. All code is reset including the array.
 
 document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
-});
+    document.getElementById("input").reset()
+    });

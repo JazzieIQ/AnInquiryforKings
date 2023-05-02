@@ -1,75 +1,84 @@
 // A Bridge Too Far: The Kings Inquiry HTML/Text Based Game.
 
-// Key phrasing
+//creating an Object
 
-const kinglyAnswer = '"African or European?"';
-let count = 0;
-let rateCount = 0;
-const rateSuccessArray = [];
-const win = 1;
-const lose = 0;
-const winTxt = "Tally!";
-const loseTxt = "Oh Peril! the King's man hath lost his footing off the bridge of death!";
-const userTxt = document.getElementById("inputTxt");
- 
-//updateDOM
+const kingsKeep = {
+    
+    // Key phrasing
+    
+    kinglyAnswer: '"African or European?"',
+    count: 0,
+    rateCount: 0,
+    rateSuccessArray: [],
+    win: 1,
+    lose: 0,
+    winTxt: "Tally!",
+    loseTxt: "Oh Peril! the King's man hath lost his footing off the bridge of death!",
+    userTxt: document.getElementById("inputTxt"),
 
-const updateDOM = (kingsInquiry) => {
-    if (kingsInquiry == "african or european" || kingsInquiry ==  "i am king i'm supposed to know these things" || kingsInquiry == "a kingly answer" || kingsInquiry ==  "five" || kingsInquiry ==  "holy hand grenade of antioch" || kingsInquiry == "ni" || kingsInquiry == "I am authur, king of the britains" ||kingsInquiry == "i am your king" || kingsInquiry == "you don't vote for kings" || kingsInquiry == "be quiet!" || kingsInquiry == "now, stand aside worthy adversary!" || kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The King's answer be: " + kinglyAnswer
-        divEl.appendChild(p);
-        rateCount;
-        rateCount += 1;
-        rateSuccessArray.push(win);
-        console.log(winTxt);
-        return;
-    }
-    else {
-        let divEl = document.querySelector('#output')
-        let p = document.createElement('p')
-        p.textContent = "The hour is past and thou art DOOMED!!!!!"
-        divEl.appendChild(p);
-        alert("Thou has been cast into the Gorge of Eternal Peril!");
-        rateCount;
-        rateSuccessArray.push(lose);
-        console.log(loseTxt);
-        return;
-    }
-}
+    //updateDOM
 
-let buttonCount = document.getElementById("replay")
-replay.onclick = function () {
-    count;
-    count += 1;
-    replay.innerHTML = "Attempt: " + count;
-    return count;
-};
+    updateDOM: (kingsInquiry) => {
+        if (kingsInquiry == "african or european" || kingsInquiry == "i am king i'm supposed to know these things" || kingsInquiry == "a kingly answer" || kingsInquiry == "five" || kingsInquiry == "holy hand grenade of antioch" || kingsInquiry == "ni" || kingsInquiry == "I am authur, king of the britains" || kingsInquiry == "i am your king" || kingsInquiry == "you don't vote for kings" || kingsInquiry == "be quiet!" || kingsInquiry == "now, stand aside worthy adversary!" || kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
+            let divEl = document.querySelector('#output')
+            let p = document.createElement('p')
+            p.textContent = "The King's answer be: " + kingsKeep.kinglyAnswer
+            divEl.appendChild(p);
+            kingsKeep.rateCount;
+            kingsKeep.rateCount += 1;
+            kingsKeep.rateSuccessArray.push(kingsKeep.win);
+            console.log(kingsKeep.winTxt);
+            return;
+        }
+        else {
+            let divEl = document.querySelector('#output')
+            let p = document.createElement('p')
+            p.textContent = "The hour is past and thou art DOOMED!!!!!"
+            divEl.appendChild(p);
+            alert("Thou has been cast into the Gorge of Eternal Peril!");
+            kingsKeep.rateCount;
+            kingsKeep.rateSuccessArray.push(kingsKeep.lose);
+            console.log(kingsKeep.loseTxt);
+            return;
+        }
+    },
+    buttonCount: document.getElementById("replay").addEventListener('click', () => {
+        kingsKeep.count;
+        kingsKeep.count += 1;
+        replay.innerHTML = "Attempt: " + kingsKeep.count;
+        return kingsKeep.count;
+    }),
 
-//update the DOM
+    //update the DOM
 
-const updateDOMArray = (kingsInquiry) => {
+    updateDOMArray: (kingsInquiry) => {
         let divEl = document.querySelector('#array')
         let a = document.createElement('a')
         a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
         divEl.appendChild(a);
-        return;
-        }
+        return {
+            MPG: MPG, 
+            tripCost: tripCost,
+            miles: miles,
+            gallons: gallons,
+            price: price
+        };
+    }
+};
 
 // Play the game/ attemp again
 
 document.querySelector('#replay').addEventListener('click', () => {
-    buttonCount;
-    let swerian = document.getElementById("inputTxt").value;
-    let kingsInquiry = swerian.toLowerCase();
+    kingsKeep.buttonCount;
+    let swerian = kingsKeep.userTxt.value;
+    let kingsInquiry = swerian.toLowerCase()//.replace; (/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/, '');
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
-    updateDOM(kingsInquiry);
+    kingsKeep.updateDOM(kingsInquiry);
 
-    //div "output" split into array. Array increase with attempt.
+    //div "output" split into array. Array increase with attempt
 
-    updateDOMArray(kingsInquiry);
+    kingsKeep.updateDOMArray(kingsInquiry);
     const kingsRecord = (document.getElementById("array")).textContent.split('; ');
     const noNullKingsArray = kingsRecord.filter(element => element !== '');
     console.log(noNullKingsArray);
@@ -77,7 +86,7 @@ document.querySelector('#replay').addEventListener('click', () => {
     
     // calculate success rate
     
-    const rateSuccess = (rateCount / count) * 100;
+    const rateSuccess = (kingsKeep.rateCount / kingsKeep.count) * 100;
     const ratePercent = Math.round(rateSuccess) + "%";
     
     // Give success rate Array with For Loop.
@@ -86,12 +95,13 @@ document.querySelector('#replay').addEventListener('click', () => {
     let sumSuccesses = 0;
     let appendDivElRate = "; Success Rates Array: ";
     let appendSuccessArray = "; The scribe has thou averaged plainy: ";
-    while (i < rateSuccessArray.length) {
-        sumSuccesses = sumSuccesses + rateSuccessArray[i];
+    while (i < kingsKeep.rateSuccessArray.length) {
+        sumSuccesses = sumSuccesses + kingsKeep.rateSuccessArray[i];
         i++
     }
-    let rateCounting = sumSuccesses / count;
-    const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + rateSuccessArray + appendSuccessArray + rateCounting;
+    let rateCounting = sumSuccesses / kingsKeep.count;
+
+    const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + kingsKeep.rateSuccessArray + appendSuccessArray + rateCounting;
     success;
     ;
 });
@@ -101,4 +111,4 @@ document.querySelector('#replay').addEventListener('click', () => {
 document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
     document.getElementById("input").reset()
-    });
+});

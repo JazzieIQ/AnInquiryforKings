@@ -15,6 +15,7 @@ const kingsKeep = {
     winTxt: "Tally!",
     loseTxt: "Oh Peril! the King's man hath lost his footing off the bridge of death!",
     userTxt: document.getElementById("inputTxt"),
+    gameData: [],
 
     //updateDOM
 
@@ -56,17 +57,7 @@ const kingsKeep = {
         let a = document.createElement('a')
         a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
         divEl.appendChild(a);
-        return
-        /*
-         {
-            MPG: MPG, 
-            tripCost: tripCost,
-            miles: miles,
-            gallons: gallons,
-            price: price
-        }
-        */
-        ;
+        return;
     }
 };
 
@@ -106,7 +97,32 @@ document.querySelector('#replay').addEventListener('click', () => {
     let rateCounting = sumSuccesses / kingsKeep.count;
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + kingsKeep.rateSuccessArray + appendSuccessArray + rateCounting;
     success;
-    return;
+
+    // New Objecta
+
+    function result() {
+        if (kingsKeep.rateSuccessArray.push(kingsKeep.win)) {
+            let gameResult = 'win';
+            gameResult;
+        }
+        else {
+            let gameResult = 'lose';
+            gameResult;
+        }
+    };
+    let userLastInput = rateSuccessArray.indexOf(rateSuccessArray.length - 1);
+    console.log(userLastInput);
+    return {
+        p: p,
+        a: a,
+        rateCount: ratecount,
+        count: count,
+        ratePercent: ratePercent,
+        result: result.gameResult,
+        userLastInput: userLastInput,
+        rateCounting: ratecounting,
+
+    };
 });
 
 //refresh Output div. All code is reset including the array.
@@ -115,6 +131,7 @@ document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
     document.getElementById("input").reset()
 });
+
 
 // unused code
 

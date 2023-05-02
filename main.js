@@ -56,13 +56,17 @@ const kingsKeep = {
         let a = document.createElement('a')
         a.textContent = '"' + "The King's answer was: " + "'" + kingsInquiry + "' " + '"; '
         divEl.appendChild(a);
-        return {
+        return
+        /*
+         {
             MPG: MPG, 
             tripCost: tripCost,
             miles: miles,
             gallons: gallons,
             price: price
-        };
+        }
+        */
+        ;
     }
 };
 
@@ -71,7 +75,7 @@ const kingsKeep = {
 document.querySelector('#replay').addEventListener('click', () => {
     kingsKeep.buttonCount;
     let swerian = kingsKeep.userTxt.value;
-    let kingsInquiry = swerian.toLowerCase()//.replace; (/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/, '');
+    let kingsInquiry = swerian.toLowerCase();//.replace; (/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/, '');
     let scribe = console.log("They transcribed " + '"' + kingsInquiry + '"');
     scribe;
     kingsKeep.updateDOM(kingsInquiry);
@@ -100,10 +104,9 @@ document.querySelector('#replay').addEventListener('click', () => {
         i++
     }
     let rateCounting = sumSuccesses / kingsKeep.count;
-
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + kingsKeep.rateSuccessArray + appendSuccessArray + rateCounting;
     success;
-    ;
+    return;
 });
 
 //refresh Output div. All code is reset including the array.
@@ -112,3 +115,20 @@ document.querySelector('#refresh').addEventListener('click', () => {
     document.getElementById("output").innerHTML = "";
     document.getElementById("input").reset()
 });
+
+// unused code
+
+/*
+
+const submit = {
+const enterKeyPress = document.getElementById("inputTxt").addEventListener("keyPress", function (event) {
+    while (event.keyCode === 'Enter') {
+        event.preventDefault();
+        submit.submitButton.click();
+    }
+    enterKeyPress;
+});
+    submitButton: 
+};
+
+*/

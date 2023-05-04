@@ -65,14 +65,15 @@ const kingsKeep = {
 
 //formValidation
 
+if 
 
 
 // Play the game/ attemp again
 
 
-document.getElementById("inputTxt").addEventListener('keyPress', () => {
-    preventDefault();
-    console.log.apply('default prevented')
+document.getElementById("inputTxt").addEventListener('Enter', (e) => {
+    e.preventDefault()
+    console.log('default prevented')
 })
 
 document.querySelector('#replay').addEventListener('click', () => {
@@ -110,6 +111,10 @@ document.querySelector('#replay').addEventListener('click', () => {
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + kingsKeep.rateSuccessArray + appendSuccessArray + rateCounting;
     success;
 
+    // clear form
+    
+    document.getElementById("input").reset();
+
     // New Objects for table creation
 
     
@@ -117,22 +122,19 @@ document.querySelector('#replay').addEventListener('click', () => {
     kingsKeep.gameData.push(
         kingsKeep.scribeDom,
         kingsInquiry,
-
         ratePercent,
         kingsKeep.rateCount,
         kingsKeep.count,
         rateCounting,
     );
-    console.log();
 
     console.log(kingsKeep.gameData);
     return {
         scribeDom: kingsKeep.scribeDom,
+        kingsInquiry: kingsKeep.kingsInquiry,
+        ratePercent: ratePercent,
         rateCount: kingsKeep.rateCount,
         count: kingsKeep.count,
-        ratePercent: ratePercent,
-
-        userLastInput: kingsInquiry,
         rateCounting: rateCounting,
     };
 });

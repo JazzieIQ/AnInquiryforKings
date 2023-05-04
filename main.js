@@ -7,11 +7,13 @@ const kingsKeep = {
     // Key phrasing
     
     kinglyAnswer: '"African or European?"',
+    scribeDom: "The King's answer be: ",
     count: 0,
     rateCount: 0,
     rateSuccessArray: [],
     win: 1,
     lose: 0,
+    result: '',
     winTxt: "Tally!",
     loseTxt: "Oh Peril! the King's man hath lost his footing off the bridge of death!",
     userTxt: document.getElementById("inputTxt"),
@@ -23,7 +25,7 @@ const kingsKeep = {
         if (kingsInquiry == "african or european" || kingsInquiry == "i am king i'm supposed to know these things" || kingsInquiry == "a kingly answer" || kingsInquiry == "five" || kingsInquiry == "holy hand grenade of antioch" || kingsInquiry == "ni" || kingsInquiry == "I am authur, king of the britains" || kingsInquiry == "i am your king" || kingsInquiry == "you don't vote for kings" || kingsInquiry == "be quiet!" || kingsInquiry == "now, stand aside worthy adversary!" || kingsInquiry == "on second thought, let's not go to camelot. 'tis a silly place") {
             let divEl = document.querySelector('#output')
             let p = document.createElement('p')
-            p.textContent = "The King's answer be: " + kingsKeep.kinglyAnswer
+            p.textContent = kingsKeep.scribeDom + kingsKeep.kinglyAnswer
             divEl.appendChild(p);
             kingsKeep.rateCount;
             kingsKeep.rateCount += 1;
@@ -61,7 +63,17 @@ const kingsKeep = {
     }
 };
 
+//formValidation
+
+
+
 // Play the game/ attemp again
+
+
+document.getElementById("inputTxt").addEventListener('keyPress', () => {
+    preventDefault();
+    console.log.apply('default prevented')
+})
 
 document.querySelector('#replay').addEventListener('click', () => {
     kingsKeep.buttonCount;
@@ -98,30 +110,30 @@ document.querySelector('#replay').addEventListener('click', () => {
     const success = rate.innerHTML = "Success: " + ratePercent + appendDivElRate + kingsKeep.rateSuccessArray + appendSuccessArray + rateCounting;
     success;
 
-    // New Objecta
+    // New Objects for table creation
 
-    function result() {
-        if (kingsKeep.rateSuccessArray.push(kingsKeep.win)) {
-            let gameResult = 'win';
-            gameResult;
-        }
-        else {
-            let gameResult = 'lose';
-            gameResult;
-        }
-    };
-    let userLastInput = rateSuccessArray.indexOf(rateSuccessArray.length - 1);
-    console.log(userLastInput);
+    
+    
+    kingsKeep.gameData.push(
+        kingsKeep.scribeDom,
+        kingsInquiry,
+
+        ratePercent,
+        kingsKeep.rateCount,
+        kingsKeep.count,
+        rateCounting,
+    );
+    console.log();
+
+    console.log(kingsKeep.gameData);
     return {
-        p: p,
-        a: a,
-        rateCount: ratecount,
-        count: count,
+        scribeDom: kingsKeep.scribeDom,
+        rateCount: kingsKeep.rateCount,
+        count: kingsKeep.count,
         ratePercent: ratePercent,
-        result: result.gameResult,
-        userLastInput: userLastInput,
-        rateCounting: ratecounting,
 
+        userLastInput: kingsInquiry,
+        rateCounting: rateCounting,
     };
 });
 
@@ -136,6 +148,19 @@ document.querySelector('#refresh').addEventListener('click', () => {
 // unused code
 
 /*
+
+    winToWin: () => {     
+        if (rateSuccessArray[i] = win) {
+            let gameResult = kingsKeep.result.replace('', 'Win');
+            gameResult;
+            return result;
+        }
+        else {
+            let gameResult = kingsKeep.result.replace('', 'Lose');
+            gameResult;
+            return result;
+        }
+    }
 
 const submit = {
 const enterKeyPress = document.getElementById("inputTxt").addEventListener("keyPress", function (event) {

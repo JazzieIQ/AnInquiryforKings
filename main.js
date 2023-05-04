@@ -64,9 +64,7 @@ const kingsKeep = {
 };
 
 //formValidation
-
-if 
-
+ 
 
 // Play the game/ attemp again
 
